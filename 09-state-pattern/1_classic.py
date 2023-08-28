@@ -1,4 +1,6 @@
 # interesting but not practical :)
+# every single state is actually a class
+# and it handles transitions from one state to another!
 from abc import ABC
 
 
@@ -12,7 +14,7 @@ class Switch:
     def off(self):
         self.state.off(self)
 
-
+## Base Class
 class State(ABC):
     def on(self, switch):
         print('Light is already on')

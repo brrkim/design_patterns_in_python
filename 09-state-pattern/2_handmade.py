@@ -19,7 +19,7 @@ class Trigger(Enum):
 
 
 if __name__ == '__main__':
-    rules = {
+    rules = { #rules of our system. S1 ----(trigger)---> S2
         State.OFF_HOOK: [
             (Trigger.CALL_DIALED, State.CONNECTING)
         ],
@@ -37,7 +37,8 @@ if __name__ == '__main__':
             (Trigger.HUNG_UP, State.ON_HOOK)
         ]
     }
-
+    
+    #just single phone call simulation
     state = State.OFF_HOOK
     exit_state = State.ON_HOOK
 
@@ -45,7 +46,7 @@ if __name__ == '__main__':
         print(f'The phone is currently {state}')
 
         for i in range(len(rules[state])):
-            t = rules[state][i][0]
+            t = rules[state][i][0] # trigger
             print(f'{i}: {t}')
 
         idx = int(input('Select a trigger:'))

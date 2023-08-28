@@ -1,3 +1,5 @@
+# 스위치문 스타일의 State Machine 패턴
+
 from enum import Enum, auto
 
 
